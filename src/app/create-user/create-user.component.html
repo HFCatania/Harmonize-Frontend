@@ -1,0 +1,198 @@
+<!-- 
+<div class="container">
+  <Form >
+      <div class="form-group">
+        Email:    <input id="emailCreateUser" type="email" name="email" size="35" [(ngModel)]="user.email"><br>
+        Password: <input id="passwordCreateUser" type="password" name="password" size="35" [(ngModel)]="user.password"><br>
+        First Name: <input id="first" type="text" name="first" size="35" [(ngModel)]="user.firstName"><br>
+        Last Name: <input id="last" type="text" name="last" size="35" [(ngModel)]="user.lastName"><br>
+        City: <input id="city" type="text" name="city" size="35" [(ngModel)]="user.city"><br>
+        State: <input id="state" type="text" name="state" size="35" [(ngModel)]="user.state"><br>
+        Country: <input id="country" type="text" name="country" size="35" [(ngModel)]="user.country"><br>
+      </div>
+  <div class="form-group">
+    Instruments: <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" >Choose Your Instruments</button>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="instrumentmodal">
+      <div class="modal-dialog modal-lg">
+        <h2>Choose Your Instruments</h2>
+           
+            <div class="modal-content" style="padding: 3%">
+                <div class="form-check" name ="instrument">
+                    <ul id="ul1">
+                        <li *ngFor="let instrument of instrumenArr">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]="instrumentArr">
+                        <label class="form-check-label" for="defaultCheck1">
+                                <p>{{instrument.instrumentName}}</p>
+                        </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+  </div>
+    <br>  
+    <div class="form-group">  
+    Genres: <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg2">Choose Your Genres</button><br>
+
+    <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="genremodal">
+            <div class="modal-dialog modal-lg">
+                <h2>Choose the Kind of Music You Play</h2>
+              <div class="modal-content" style="padding: 3%">
+                      <div class="form-check" name="genre">
+                        <ul id="ul2">
+                        <li *ngFor="let genre of genreArr">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck" [(ngModel)]="genreArr">
+                          <label class="form-check-label" for="defaultCheck1">
+                              <p>{{genre.genreName}}</p>
+                          </label>
+                         </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>  
+                  </div>
+              </div>
+          <br>
+   
+
+  <button (click)="createUser()" alt="Submit" width="48" height="48">Submit</button>
+ -->
+
+<!-- <div class="container" >
+<form [formGroup]="userForm" (ngSubmit)="createUser()">
+    <div class="form-group">
+      <label for="InputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="InputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password">
+    </div>
+    <div class="form-group">
+        <label for="InputFirstName">First Name</label>
+        <input type="text" class="form-control" id="InputFirstName" aria-describedby="firstName" placeholder="Enter First Name" formControlName="firstName">
+      </div>
+    <div class="form-group" >
+        <label for="InputLastName">Last Name</label>
+        <input type="text" class="form-control" id="InputLastName" aria-describedby="lastName" placeholder="Enter Last Name" formControlName="lastName">
+      </div>
+    <div class="form-group" >
+        <label for="InputCityName">City</label>
+        <input type="text" class="form-control" id="InputCityName" aria-describedby="cityName" placeholder="Enter City" formControlName="city">
+      </div>
+    <div class="form-group" >
+        <label for="InputStateName">State</label>
+        <input type="text" class="form-control" id="InputStateName" aria-describedby="stateName" placeholder="Enter State" formControlName="state">
+      </div>
+    <div class="form-group" >
+        <label for="InputCountryName">Country</label>
+        <input type="text" class="form-control" id="InputCountryName" aria-describedby="countryName" placeholder="Enter Country" formControlName="country">
+      </div> -->
+    
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instrumentmodal" >Choose Your Instruments</button> -->
+    <!-- <form [formGroup]="instrumentCheckForm"> -->
+    <!-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="instrumentmodal">
+        <div class="modal-dialog modal-lg">
+         <h2>Choose Your Instruments</h2>
+          <div class="modal-content" style="padding: 3%">
+          
+            <ul id="ul1" formGroupName="instruments">
+              <ul formArrayName= "instruments"  *ngFor="let instrument of instruments.control; let index = i" >
+                <div class="form-group form-check" [formGroupName]="i">
+                  <input type="checkbox" class="form-check-input" id= "{{ 'instrumentCheck' + i}}" [id]="instrument.id"  >
+                  <label class="form-check-label" for="defaultCheck1">{{instrument.instrumentName}}</label>  
+                </div>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      
+    </div> -->
+  <!-- </form> -->
+    <!-- <br>
+    <br>
+    
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#genremodal" >Choose Your Genres</button>
+    <form>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="genremodal">
+        <div class="modal-dialog modal-lg">
+          <h2>What Kind of Music do You Play?</h2>
+            <div class="modal-content" style="padding: 3%">        
+            <ul id="ul2"> 
+              <ul *ngFor="let genre of genreArr">
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="defaultCheck1">
+                  <label class="form-check-label" for="defaultCheck1">{{genre.genreName}}</label>   
+                </div>
+              </ul>  
+            </ul>
+            </div>
+        </div>
+      </div>  
+    </form>
+      <br>
+      <br>  -->
+<!-- {{formObj}}
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+</div> -->
+<div class="row">
+    <div class="card col-md-4 offset-md-4 custom_panel" style="margin-top: 3%;">
+        <div style="margin: 3%">
+            <form>
+              <div style="text-align: center;">
+                 <h3>Create Your Account: </h3>
+              </div> 
+                <div class="form-group">
+                    <label for="email"><p>Email address</p></label>
+                    <input [(ngModel)]="user.email" type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label class="missing-info" *ngIf="emptyEmail">* required field</label>
+                    <!-- <small id="emailHelp" class="form-text text-muted"><p>We'll never share your email with anyone else.</p></small> -->
+                </div>
+                <div class="form-group">
+                    <label for="password"><p>Password</p></label>
+                    <input [(ngModel)]="user.password" type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    <!-- <label class="missing-info" *ngIf="emptyPassword">* required field</label> -->
+                </div>
+                <div class="form-group">
+                    <label for="firstName"><p>First Name</p></label>
+                    <input [(ngModel)]="user.firstName" type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+                    <!-- <label class="missing-info" *ngIf="emptyFirstName">* required field</label> -->
+                </div>
+                <div class="form-group">
+                    <label for="lastName"><p>Last Name</p></label>
+                    <input [(ngModel)]="user.lastName" type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+                    <!-- <label class="missing-info" *ngIf="emptyLastName">* required field</label> -->
+                </div>
+                <div class="form-group">
+                    <label for="city"><p>City</p></label>
+                    <input [(ngModel)]="user.city" type="text" class="form-control" id="city" name="city" placeholder="City">
+                    <!-- <label class="missing-info" *ngIf="emptyLastName">* required field</label> -->
+                </div>
+                <div class="form-group">
+                    <label for="state"><p>State</p></label>
+                    <input [(ngModel)]="user.state" type="text" class="form-control" id="state" name="state" placeholder="State">
+                    <!-- <label class="missing-info" *ngIf="emptyLastName">* required field</label> -->
+                </div>
+                <div class="form-group">
+                    <label for="country"><p>Country</p></label>
+                    <input [(ngModel)]="user.country" type="text" class="form-control" id="country" name="country" placeholder="Country">
+                    <!-- <label class="missing-info" *ngIf="emptyLastName">* required field</label> -->
+                </div>
+                <!-- <div class="form-group">
+                    <label for="userNameCreateUser"><p>Username</p></label>
+                    <input type="text" class="form-control" id="userNameCreateUser" placeholder="Username">
+                    <label class="missing-info" *ngIf="emptyUserName">* required field</label>
+                </div> -->
+                <!-- <p class="error-message" *ngIf="this.messageService.message">
+                        {{this.messageService.message}}
+                    </p> -->
+                    <button type="submit" class="btn btn-primary col-md-4 offset-md-4" (click)="createUser()">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
