@@ -9,17 +9,18 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   public authUrl: string;
   public newUserUrl: string;
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
-    this.authUrl = environment.baseURL + '/register'; 
-    this.newUserUrl = environment.baseURL + '/login';
+    this.authUrl = environment.baseURL + 'login'; 
+    this.newUserUrl = environment.baseURL + 'register';
    }
 
-   createUser(user: User): Observable<String> {
+   createUser(user: User): Observable<string> {
     return this.http.post(this.newUserUrl, user, {responseType: 'text'}); 
   }
 

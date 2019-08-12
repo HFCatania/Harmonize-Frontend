@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../Model/user';
 import { UserService } from '../Service/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../Service/auth.service';
+import { TokenService } from '../Service/token.service';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -11,21 +14,40 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   
-  public user: User = new User();
-  public currentUser = User; 
+  @Input()
+  email: string; 
 
-  constructor(private service: UserService,
+  @Input()
+  password: string;
+
+  authService: AuthService;
+  tokenService: TokenService;
+  cookieService: CookieService;
+
+
+  constructor(authService: AuthService, 
+              tokenService: TokenService, 
+              cookieService: CookieService, 
               private http: HttpClient,
               private router: Router
-              ) {}
+              ) {
+                this.authService = authService;
+                this.tokenService = tokenService; 
+                this.cookieService = cookieService;
+              }
    
 
   ngOnInit() {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser')); 
+    this.cookieService.check('token');
+    this.tokenService.token = this.cookieService.get('token'); 
   }
 
-  onSubmit(){
-    this.service.loggedIn
+  logIn(){
+    this.authService.logIn(this.email, this.password).subscribe(jwt => {
+      this.tokenService.token = jwt; 
+      this.cookieService.set('token', this.tokenService.token);
+      this.router.navigate(['home'])
+    }); 
   }
 
 }

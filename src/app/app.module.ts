@@ -8,12 +8,17 @@ import { AppComponent } from './App-Component/app.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { LoginComponent } from './login/login.component';
 import { UserService } from './Service/user.service';
+import { CookieService } from 'ngx-cookie-service';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateUserComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,7 @@ import { UserService } from './Service/user.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [UserService],
+  providers: [UserService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

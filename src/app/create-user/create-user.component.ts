@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/Model/user'; 
 import { UserService } from 'src/app/Service/user.service';
+import { TokenService } from 'src/app/Service/token.service'
 import { environment } from 'src/environments/environment.prod';
 import { Router } from '@angular/router'; 
 import { HttpClient } from '@angular/common/http';
@@ -22,14 +23,16 @@ export class CreateUserComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private http: HttpClient,
-    private router: Router
-    ){ };
+    private router: Router,
+    private tokenService: TokenService
+    ){ this.user = new User() };
      
   ngOnInit() {
   }
   
   onSubmit(){
-    this.authService.createUser(this.user); 
+    this.authService.createUser(this.user).subscribe(jwt => this.tokenService.token = jwt); 
+
   }
    
 

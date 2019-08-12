@@ -14,6 +14,6 @@ export class LoginService {
   }
 
   login(user: User){
-    return this.http.put<User>(this.url + '/login', user)
+    return this.http.put<User>(this.url + 'login', user)
   }
 }
