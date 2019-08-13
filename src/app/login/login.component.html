@@ -8,19 +8,23 @@
                   </div> 
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="email">Email address</label>
+                            <input [(ngModel)]="email" name="emailform"type="email" class="form-control" id="emailBox" aria-describedby="emailHelp" placeholder="Enter email">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <label for="password">Password</label>
+                            <input [(ngModel)]="password" name="passwordform" type="password" class="form-control" id="password" placeholder="Password">
                         </div>
                         <button type="submit" class="btn btn-primary" (click)="logIn()">Submit</button>
                         </form>
+
+                        <div *ngIf="tokenService.token">
+                            <label for="jwt">JWT Token</label>
+                                <div class="input-group mb-3 col-12">
+                                    <input [(ngModel)]="tokenService.token" type="text" name="jwt" id="jwt" class="form-control" placeholder="JWT Token" readonly>
+                                </div>
+                            </div>
+                              
                     
                 

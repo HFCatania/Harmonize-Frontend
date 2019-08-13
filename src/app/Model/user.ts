@@ -6,9 +6,9 @@ export class User {
     password: string;
     firstName: string; 
     lastName: string;
-    city: string;
-    state: string;
-    country: string;
+    // city: string;
+    // state: string;
+    // country: string;
     // instruments: string; 
     // genre: string;
 
