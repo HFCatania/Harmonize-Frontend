@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './App-Component/app.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { LoginComponent } from './login/login.component';
-import { UserService } from './Service/user.service';
+import { UserService } from './Services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component'
+import { ProfileComponent } from './profile/profile.component';
+import { CreateProfileComponent } from './create-profile/create-profile.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfileComponent } from './profile/profile.component'
     CreateUserComponent,
     LoginComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    CreateProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/Model/user'; 
-import { UserService } from 'src/app/Service/user.service';
-import { TokenService } from 'src/app/Service/token.service'
+import { UserService } from 'src/app/Services/user.service';
+import { TokenService } from 'src/app/Services/token.service'
 import { environment } from 'src/environments/environment.prod';
 import { Router } from '@angular/router'; 
 import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../Service/auth.service';
+import { AuthService } from '../Services/auth.service';
 
 
 

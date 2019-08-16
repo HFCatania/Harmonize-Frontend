@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../Model/user';
-import { UserService } from '../Service/user.service';
+import { UserService } from '../Services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { AuthService } from '../Service/auth.service';
-import { TokenService } from '../Service/token.service';
+import { AuthService } from '../Services/auth.service';
+import { TokenService } from '../Services/token.service';
 import {CookieService} from 'ngx-cookie-service';
 
 @Component({

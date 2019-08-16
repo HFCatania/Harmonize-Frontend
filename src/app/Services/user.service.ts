@@ -26,5 +26,7 @@ export class UserService {
     //  this.loggedIn = true; 
    }
 
-   
+   getUserById(id: number): Observable<User>{
+    return this.http.get<User>(this.baseUrl + '/users/${id}'); 
+  }
 }
