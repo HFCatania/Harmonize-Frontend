@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../Model/user';
-import { Profile } from 'selenium-webdriver/firefox';
+import { Profile } from '../Model/profile';
 import { UserService } from '../Services/user.service';
 import { AuthService } from '../Services/auth.service';
 import { ActivatedRoute } from '@angular/router';
