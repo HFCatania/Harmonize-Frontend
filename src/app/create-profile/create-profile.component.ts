@@ -16,6 +16,7 @@ export class CreateProfileComponent implements OnInit {
   currentUser: User; 
   @Input() profile: Profile;
   show: boolean;
+  
 
   constructor(private userService: UserService,
               private authService: AuthService,
@@ -25,15 +26,19 @@ export class CreateProfileComponent implements OnInit {
                }
 
   ngOnInit(): void {
-  
+    // this.getProfile; 
   }
 
-  getProfile(){
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.userService.getUserById(id).subscribe(currentUser => {
-      this.user = currentUser; 
-      this.profile
-    })
+  // getProfile(){
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.userService.getUserById(id).subscribe(currentUser => {
+  //     this.user = currentUser; 
+  //     this.profile
+  //   })
+  // }
+
+  editProfile(){
+    
   }
 
 }

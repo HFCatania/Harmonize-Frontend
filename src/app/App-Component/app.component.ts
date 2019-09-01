@@ -11,6 +11,13 @@ import { UserService } from '../Services/user.service';
 
 export class AppComponent {
   title = 'Harmonize';
+  currentUser: User; 
+  userService: UserService; 
+
+  logOut(){
+    this.currentUser = null;
+    this.userService.userLogout();
+  }
 //   loggedIn: boolean;
 //   currentUser: User; 
 //   dropdownList = [];

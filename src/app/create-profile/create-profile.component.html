@@ -1,1 +1,47 @@
 <p>create-profile works!</p>
+<div class="form-group">
+    Instruments: <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" >Choose Your Instruments</button>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="instrumentmodal">
+      <div class="modal-dialog modal-lg">
+        <h2>Choose Your Instruments</h2>
+           
+            <div class="modal-content" style="padding: 3%">
+                <div class="form-check" name ="instrument">
+                    <ul id="ul1">
+                        <li *ngFor="let instrument of instrumenArr">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]="instrumentArr">
+                        <label class="form-check-label" for="defaultCheck1">
+                                <p>{{instrument.instrumentName}}</p>
+                        </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+  </div>
+    <br>  
+    <div class="form-group">  
+    Genres: <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg2">Choose Your Genres</button><br>
+
+    <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="genremodal">
+            <div class="modal-dialog modal-lg">
+                <h2>Choose the Kind of Music You Play</h2>
+              <div class="modal-content" style="padding: 3%">
+                      <div class="form-check" name="genre">
+                        <ul id="ul2">
+                        <li *ngFor="let genre of genreArr">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck" [(ngModel)]="genreArr">
+                          <label class="form-check-label" for="defaultCheck1">
+                              <p>{{genre.genreName}}</p>
+                          </label>
+                         </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>  
+                  </div>
+              </div>
+          <br>

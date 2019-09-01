@@ -29,4 +29,14 @@ export class UserService {
    getUserById(id: number): Observable<User>{
     return this.http.get<User>(this.baseUrl + '/users/${id}'); 
   }
+
+  userLogout(){
+    localStorage.removeItem('currentUser');
+    this.currentUser = null;
+    location.reload();
+  }
+
+  isLoggedIn(){
+    return this.loggedIn;
+  }
 }
