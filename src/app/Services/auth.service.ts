@@ -16,8 +16,8 @@ export class AuthService {
   public newUserUrl: string;
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
-    this.authUrl = environment.baseURL + 'login'; 
-    this.newUserUrl = environment.baseURL + 'register';
+    this.authUrl = environment.baseURL + '/login'; 
+    this.newUserUrl = environment.baseURL + '/register';
    }
 
    createUser(user: User): Observable<string> {

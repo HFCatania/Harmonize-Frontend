@@ -62,8 +62,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Harmonize-Frontend:build",
-            "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "Harmonize-Frontend:build"
           },
           "configurations": {
             "production": {
