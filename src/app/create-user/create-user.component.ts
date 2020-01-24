@@ -3,9 +3,10 @@ import { User } from 'src/app/Model/user';
 import { UserService } from 'src/app/Services/user.service';
 import { TokenService } from 'src/app/Services/token.service'
 import { environment } from 'src/environments/environment.prod';
-import { Router } from '@angular/router'; 
+import { Router, ActivatedRoute } from '@angular/router'; 
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../Services/auth.service';
+import { first } from 'rxjs/operators'; 
 
 
 
@@ -20,18 +21,42 @@ export class CreateUserComponent implements OnInit {
   
   user: User;  
 
+  loading = false;
+  error: string;s
+  success = false;
+  returnUrl: string;
+
   constructor(
     private authService: AuthService,
     private http: HttpClient,
     private router: Router,
+    private route: ActivatedRoute,
     private tokenService: TokenService
     ){ this.user = new User() };
      
   ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   
   onSubmit(){
-    this.authService.createUser(this.user).subscribe(jwt => this.tokenService.token = jwt); 
+    if (this.user.password != this.user.token){
+      this.error = 'Passwords must match';
+    } else {
+      this.error = '';
+
+    this.loading = true;
+    this.authService.createUser(this.user).pipe(first())
+    .subscribe(
+        data => {
+          this.success = true;
+          this.loading = false;
+        },
+        error => {
+            console.log('er')
+            this.error = error;
+            this.loading = false;
+        });
+    // this.authService.createUser(this.user).subscribe(jwt => this.tokenService.token = jwt); 
 
   }
    
@@ -102,3 +127,4 @@ export class CreateUserComponent implements OnInit {
 //   getSelectedInstruments(){
     
 //   }
+}
